@@ -29,20 +29,18 @@ class ViewController: UIViewController {
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         
-        redLabel.text = string(from: redSlider)
-        greenLabel.text = string(from: greenSlider)
-        blueLabel.text = string(from: blueSlider)
-        
         setColor()
         setValue(for: redLabel, greenLabel, blueLabel)
     }
 
     
     @IBAction func rgbSlider(_ sender: UISlider) {
-        
-        redLabel.text = string(from: redSlider)
-        greenLabel.text = string(from: greenSlider)
-        blueLabel.text = string(from: blueSlider)
+        switch sender.tag {
+        case 0: redLabel.text = string(from: sender)
+        case 1: greenLabel.text = string(from: sender)
+        case 2: blueLabel.text = string(from: sender)
+        default: break
+        }
         
         setColor()
     }
